@@ -1,0 +1,34 @@
+﻿<Window x:Class="UsersApp.UserPageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UsersApp"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Application for users" Height="350" Width="600" WindowStartupLocation="CenterScreen" Icon="folder_shell_icon_161282.ico">
+    <Grid Background="#FF230728">
+        <Border MinWidth="400" Margin="15" Background="#FF48184F" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="40" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Кабинет пользователя" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" Background="#FF48184F" Foreground="#FFFCFCFC"/>
+
+                <ListView x:Name="listUsers" Margin="10">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Login : " FontWeight="ExtraBold" Foreground="Snow"/>
+                                <TextBlock Text="{Binding Login}" FontStyle="Italic" Foreground="Snow"/>
+                                <TextBlock Text=" ,  " FontWeight="SemiBold" Foreground="Snow"/>
+                                <TextBlock Text=" Email :  " FontWeight="ExtraBold" Foreground="Snow"/>
+                                <TextBlock Text="{Binding Email}" FontStyle="Italic" Foreground="Snow"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
